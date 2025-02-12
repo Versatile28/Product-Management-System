@@ -2,12 +2,16 @@ const cloudinary = require('cloudinary').v2;
 const productModel = require('../models/productModel');
 
 const createProduct = (req,res) => {
+    console.log(req);
+    if(!req.file){
+        return res.status(400).json({error: 'No file uploaded'});
+    }
     cloudinary.uploader.upload_stream({ folder:'products'}, (error,result) =>{
         if (error) return res.status(500).json({ error });
 
         const newProduct = new productModel({
             name: req.body.name,
-            description: req.bocy.description,
+            description: req.body.description,
             price: req.body.price,
             imageUrl: result.secure_url
         });
