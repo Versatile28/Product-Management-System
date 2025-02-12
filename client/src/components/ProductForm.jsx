@@ -55,7 +55,7 @@ export default function ProductForm() {
 
                     <Form.Group className="mb-3" controlId="formGridPDescription">
                         <Form.Label>Description</Form.Label>
-                        <Form.Control name="description" value={product.description} type="text" placeholder="Description" onChange={handleChange} required/>
+                        <Form.Control as="textarea" name="description" value={product.description} type="text" placeholder="Description" onChange={handleChange} required/>
                     </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formGridPrice">
