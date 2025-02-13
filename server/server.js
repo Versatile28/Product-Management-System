@@ -47,7 +47,7 @@ app.use(cors());
     // console.log(autoCropUrl);    
 })();
 
-app.use('/api/products', productRoutes);
+app.use('/', productRoutes);
 
 mongoose
 .connect(process.env.MONGO_URI)
