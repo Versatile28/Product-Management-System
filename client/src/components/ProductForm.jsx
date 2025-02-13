@@ -3,10 +3,12 @@ import { baseUrl } from '../utils/constant';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import {useNavigate} from 'react-router-dom';
 
 
 export default function ProductForm() {
     const [product, setProduct] = useState({ name: "", description: "", price: "", image: null});
+    const navigate = useNavigate();
 
     const handleChange = (e) => setProduct({ ...product, [e.target.name]: e.target.value });
 
@@ -30,6 +32,8 @@ export default function ProductForm() {
         } catch (error) {
             console.error('Upload error', error.response?.data || error.message);
         }
+        alert('Product Added');
+        navigate('/view');
     }
     
 
