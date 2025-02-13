@@ -45,9 +45,9 @@ export default function ProductList() {
                   style={{ height: "200px", objectFit: "cover" }}
                 />
                 <Card.Body>
-                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Title>{product.name.substring(0, 50)}</Card.Title>
                   <Card.Text>
-                    {product.description.substring(0, 50)}...
+                    {product.description.substring(0, 150)}...
                   </Card.Text>
                   <h5 className="text-success">${product.price}</h5>
                 </Card.Body>
