@@ -32,8 +32,6 @@ export default function ProductForm() {
             console.error('Upload error', error.response?.data || error.message);
         }
         alert('Product added');
-        navigate('/view');
-
     }
     
 
