@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductList from './components/ProductList';
 import Error from './components/Error'
 import Landing from './components/Landing'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 
 
 export default function App() {
@@ -12,14 +12,14 @@ export default function App() {
     <main>
       <h1 className='title' style={{textAlign:"center", paddingTop:"20px", paddingBottom:"20px"}}>Product Management System</h1>
       <div className='app'>
-        <BrowserRouter>
+        <Router>
           <Routes>
             <Route path='/*' element={<Error/>}/>
             <Route path='/' element={<Landing/>}/>
             <Route path='/view' element={<ProductList/>}/>
             <Route path='/add' element={<ProductForm/>}/>
           </Routes>
-        </BrowserRouter>
+        </Router>
       </div>
     </main>
   )
