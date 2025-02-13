@@ -43,7 +43,6 @@ app.use(cors());
     //     width: 500,
     //     height: 500,
     // });
-    
     // console.log(autoCropUrl);    
 })();
 
